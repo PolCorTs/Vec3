@@ -53,7 +53,7 @@ public:
 		return x == vec.x && y == vec.y && z == vec.z;
 	}
 
-	vec3 operator *k (const vec3 &(TYPE) k) {
+	vec3 operator *k (const vec3 &(T) k) {
 		x = x * k;
 		y = y * k;
 		z = z * k;
@@ -61,12 +61,12 @@ public:
 		return *this;
 	}
 
-	TYPE operator * (const vec3 &vec) {
+	T operator * (const vec3 &vec) {
 
 		return (x * vec.x) + (y * vec.y) + (z * vec.z);
 	}
 
-	TYPE magnitude() {
+	T magnitude() {
 
 		return sqrt(x * x + y * y + z * z);
 	}
@@ -80,19 +80,19 @@ public:
 
 	void zero() {
 
-		x = y = z = (TYPE)0;
+		x = y = z = (T)0;
 	}
 
 	bool is_zero() {
 
-		return x == (TYPE)0 && y == (TYPE)0 && z == (TYPE)0;
+		return x == (T)0 && y == (T)0 && z == (T)0;
 	}
 
-	TYPE distance_to(const vec3& vec) {
+	T distance_to(const vec3& vec) {
 
-		TYPE a = x - vec.x;
-		TYPE b = y - vec.y;
-		TYPE c = z - vec.z;
+		T a = x - vec.x;
+		T b = y - vec.y;
+		T c = z - vec.z;
 
 		return sqrt(a * a + b * b + c * c);
 	}
